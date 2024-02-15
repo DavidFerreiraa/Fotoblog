@@ -65,6 +65,11 @@ main {
     margin: 0 auto;
 }
 
+.container h1 {
+    font-size: 2.4rem;
+    padding: 1.6rem 0;;
+}
+
 .input-wrapper label {
     width: 1px;
     height: 1px;
@@ -91,6 +96,62 @@ main {
     width: 4.2rem;
     height: 4.2rem;
     border-radius: 50%;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    column-gap: 2rem;
+    row-gap: 2.2rem;
+    margin-top: 1.6rem;
+}
+
+.item {
+    border-radius: .75rem;
+    max-width: 40rem;
+    max-height: 28.8rem;
+    overflow: hidden;
+    background-color: var(--color-base-white);
+}
+
+.item img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+
+    transition: all 200ms ease-out;
+}
+
+.item img:hover {
+    filter: hue-rotate(7deg) contrast(101%) saturate(200%);
+    transform: scale(1.1) rotate(-2deg);
+}
+
+.item .details {
+    padding: 2.2rem;
+}
+
+.details {
+    background-color: var(--color-base-white);
+    z-index: 1;
+    position: relative;
+}
+
+.details h2 {
+    font-size: 1.8rem;
+}
+
+.tags {
+    margin-top: 1.2rem;
+}
+
+.tags span {
+    padding: .6rem;
+    background-color: var(--color-base-gray-100);
+    border-radius: .4rem;
+    font-size: 1.2rem;
+    text-transform: uppercase;
 }
 
 footer p {
