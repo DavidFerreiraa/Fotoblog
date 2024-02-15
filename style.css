@@ -33,6 +33,11 @@ html, body, input {
     grid-template-rows: max-content 1fr max-content;
 }
 
+header {
+    --start-Y: -100%;
+    animation: move .2s;
+}
+
 header, nav, nav ul {
     display: flex;
     align-items: center;
@@ -113,9 +118,14 @@ main {
     max-height: 28.8rem;
     overflow: hidden;
     background-color: var(--color-base-white);
+
+    --delay: .4s;
+    animation: appear .4s var(--delay) backwards;
 }
 
 .item img {
+    display: block;
+
     width: 100%;
     aspect-ratio: 16/9;
     object-fit: cover;
@@ -154,8 +164,26 @@ main {
     text-transform: uppercase;
 }
 
+footer {
+    --start-Y: 100%;
+    animation: move .2s;
+}
+
 footer p {
     font-weight: 600;
     text-align: center;
     padding: 1.6rem;
+}
+
+@keyframes move {
+    from {
+        transform: translateY(var(--start-Y));
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: scale(0.7);
+    }
 }
