@@ -175,6 +175,24 @@ footer p {
     padding: 1.6rem;
 }
 
+@media (max-width: 750px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .avatar {
+        display: none;
+    }
+}
+
+@media (max-width: 550px) {
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+    .input-wrapper {
+        display: none;
+    }
+}
+
 @keyframes move {
     from {
         transform: translateY(var(--start-Y));
